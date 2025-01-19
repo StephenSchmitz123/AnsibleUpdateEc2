@@ -1,0 +1,12 @@
+- name: Update Ec2 Instances
+  hosts: ec2_instances
+  become: true # To run the tasks as that require sudo
+
+  tasks:
+    - name: Update Ec2 Dependancy Packages
+      package:
+        name: 
+          - nginx
+          - npm
+          - yum 
+        state: latest        
